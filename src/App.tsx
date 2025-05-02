@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import Drawer from "./components/common/Drawer";
 import Router from "./router/router";
 import Header from "./components/common/Header";
+import Footer from "./components/common/Footer";
 
 const App = (): JSX.Element => {
 
@@ -14,7 +15,7 @@ const App = (): JSX.Element => {
         <section className="main pt-16">
           <Router />
         </section>
-        {/* Footer를 렌더링 하세요 */}
+        <Footer/>
       </section>
       <Drawer />
     </BrowserRouter>
