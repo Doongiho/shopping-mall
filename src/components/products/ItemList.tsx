@@ -72,77 +72,34 @@ type Product = {
 }
 
 interface ItemListProps {
-    items: Product[];
+  items: Product[];
+  category: 'men\'s clothing' | 'jewelery' | 'electronics';
+  categoryLabel: string; 
 }
 
-const ItemList: React.FC<ItemListProps> = ({items}) => {
-    return (
-      <>
-        <div>
-          <Category>패션</Category>
-          <ProductList>
-            {items
-              .filter(item => item.category === "men's clothing")
-              .slice(0, 4)
-              .map(item => (
-                <a href={`/product/${item.id}`} key={item.id}>
-                  <ProductItem>
-                    <ProductFigure>
-                      <ProductImage src={item.image} alt={item.title}/>
-                    </ProductFigure>
-                    <ProductExplanation>
-                      <ProductTitle>{item.title}</ProductTitle>
-                      <ProductPrice>${Math.round(item.price).toLocaleString()}</ProductPrice>
-                    </ProductExplanation>
-                  </ProductItem>
-                </a>
-            ))}
-          </ProductList>
-        </div>
-        <div>
-        <Category>액세서리</Category>
-          <ProductList>
-            {items
-              .filter(item => item.category === "jewelery")
-              .slice(0, 4)
-              .map(item => (
-                <a href={`/product/${item.id}`} key={item.id}>
-                  <ProductItem>
-                    <ProductFigure>
-                      <ProductImage src={item.image} alt={item.title}/>
-                    </ProductFigure>
-                    <ProductExplanation>
-                      <ProductTitle>{item.title}</ProductTitle>
-                      <ProductPrice>${Math.round(item.price).toLocaleString()}</ProductPrice>
-                    </ProductExplanation>
-                  </ProductItem>
-                </a>
-            ))}
-          </ProductList>
-        </div>
-        <div>
-        <Category>디지털</Category>
-          <ProductList>
-            {items
-              .filter(item => item.category === "electronics")
-              .slice(0, 4)
-              .map(item => (
-                <a href={`/product/${item.id}`} key={item.id}>
-                  <ProductItem>
-                    <ProductFigure>
-                      <ProductImage src={item.image} alt={item.title}/>
-                    </ProductFigure>
-                    <ProductExplanation>
-                      <ProductTitle>{item.title}</ProductTitle>
-                      <ProductPrice>${Math.round(item.price).toLocaleString()}</ProductPrice>
-                    </ProductExplanation>
-                  </ProductItem>
-                </a>
-            ))}
-          </ProductList>
-        </div>
-        </>
-      );
-    };
+const ItemList: React.FC<ItemListProps> =  ({ items, category, categoryLabel }) => {
+  return (
+    <div>
+      <Category>{categoryLabel}</Category>
+      <ProductList>
+        {items
+          .filter(item => item.category === category)
+          .map(item => (
+            <a href={`/product/${item.id}`} key={item.id}>
+              <ProductItem>
+                <ProductFigure>
+                  <ProductImage src={item.image} alt={item.title} />
+                </ProductFigure>
+                <ProductExplanation>
+                  <ProductTitle>{item.title}</ProductTitle>
+                  <ProductPrice>${Math.round(item.price).toLocaleString()}</ProductPrice>
+                </ProductExplanation>
+              </ProductItem>
+            </a>
+          ))}
+      </ProductList>
+    </div>
+  );
+};
 
 export default ItemList;

@@ -3,17 +3,21 @@ import ItemList from '../components/products/ItemList';
 import products from '../../public/products.json';
 
 const Index = (): JSX.Element => {
+  const menClothing = products.filter(item => item.category === "men's clothing").slice(0, 4);
+  const jewelery = products.filter(item => item.category === "jewelery").slice(0, 4);
+  const electronics = products.filter(item => item.category === "electronics").slice(0, 4);
+
   return (
     <>
       <Slider />
       <section className="pt-6 lg:pt-12 pb-4 lg:pb-8 px-4 xl:px-2 mt-10 xl:container mx-auto">
-      <ItemList items={products} />
+        <ItemList items={menClothing} category="men's clothing" categoryLabel="패션" />
       </section>
       <section className="pt-6 lg:pt-12 pb-4 lg:pb-8 px-4 xl:px-2 xl:container mx-auto">
-         {/* componetns products 폴더에 공통으로 사용할 ItemList 컴포넌트를 만들어서 노출 시켜 보세요. */}
+        <ItemList items={jewelery} category="jewelery" categoryLabel="액세서리" />
       </section>
       <section className="pt-6 lg:pt-12 pb-4 lg:pb-8 px-4 xl:px-2 mb-20 xl:container mx-auto">
-         {/* componetns products 폴더에 공통으로 사용할 ItemList 컴포넌트를 만들어서 노출 시켜 보세요. */}
+        <ItemList items={electronics} category="electronics" categoryLabel="디지털" />
       </section>
     </>
   );

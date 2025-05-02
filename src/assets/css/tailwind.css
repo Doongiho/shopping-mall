@@ -29,3 +29,7 @@ body {
   --navbar-padding: 1rem; 
   --rounded-btn: .5rem;
 }
+.carousel .slide img{
+  border: 0;
+  height: 84vh;
+}

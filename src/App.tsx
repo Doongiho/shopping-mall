@@ -12,7 +12,7 @@ const App = (): JSX.Element => {
       <input type="checkbox" id="side-menu" className="drawer-toggle" />
       <section className="drawer-content">
         <Header/>
-        <section className="main pt-16">
+        <section className="main">
           <Router />
         </section>
         <Footer/>
