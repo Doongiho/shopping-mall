@@ -85,8 +85,8 @@ const ItemList: React.FC<ItemListProps> = ({items}) => {
               .filter(item => item.category === "men's clothing")
               .slice(0, 4)
               .map(item => (
-                <a href={`/product/${item.id}`}>
-                  <ProductItem key={item.id}>
+                <a href={`/product/${item.id}`} key={item.id}>
+                  <ProductItem>
                     <ProductFigure>
                       <ProductImage src={item.image} alt={item.title}/>
                     </ProductFigure>
@@ -106,8 +106,8 @@ const ItemList: React.FC<ItemListProps> = ({items}) => {
               .filter(item => item.category === "jewelery")
               .slice(0, 4)
               .map(item => (
-                <a href={`/product/${item.id}`}>
-                  <ProductItem key={item.id}>
+                <a href={`/product/${item.id}`} key={item.id}>
+                  <ProductItem>
                     <ProductFigure>
                       <ProductImage src={item.image} alt={item.title}/>
                     </ProductFigure>
@@ -127,8 +127,8 @@ const ItemList: React.FC<ItemListProps> = ({items}) => {
               .filter(item => item.category === "electronics")
               .slice(0, 4)
               .map(item => (
-                <a href={`/product/${item.id}`}>
-                  <ProductItem key={item.id}>
+                <a href={`/product/${item.id}`} key={item.id}>
+                  <ProductItem>
                     <ProductFigure>
                       <ProductImage src={item.image} alt={item.title}/>
                     </ProductFigure>
