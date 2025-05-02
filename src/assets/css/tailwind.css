@@ -25,3 +25,7 @@ body {
 .js-searchedItem:active span {
   color: white !important;
 }
+:root {
+  --navbar-padding: 1rem; 
+  --rounded-btn: .5rem;
+}
